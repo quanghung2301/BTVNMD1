@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+label {
+  margin-left: 100px;
+}
+input {
+  width: 500px;
+  margin-left: 100px;
+}
+textarea {
+  width: 400px;
+  margin-left: 100px;
+}
+button {
+  margin-left: 100px;
+  width: 200px;
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+}
