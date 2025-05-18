@@ -1,0 +1,52 @@
+div {
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+  background-color: grey;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.fade-in {
+  transition: background-color 0.5s ease-in-out;
+}
+.fade-in:hover {
+  background-color: blueviolet;
+}
+.change-color {
+  transition: background-color 0.1s;
+}
+.change-color:hover {
+  background-color: green;
+}
+.grow {
+  transition: all 0.5s ease;
+}
+.grow:hover {
+  transform: scale(1.3);
+}
+.shrink {
+  transition: all 0.5s ease;
+}
+.shrink:hover {
+  transform: scale(0.7);
+}
+.rotate {
+  transition: all 0.2s ease;
+}
+.rotate:hover {
+  transform: rotate(-30deg);
+}
+.s-to-circle {
+  transition: all 0.3s ease;
+}
+.s-to-circle:hover {
+  border-radius: 50px;
+}
+.inset-border {
+  transition: all 0.3s ease;
+  border: solid 5px gray;
+}
+.inset-border:hover {
+  border: solid 5px blue;
+}
