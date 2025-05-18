@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+ul {
+  background-color: gray;
+  width: 150px;
+  padding: 0;
+  list-style: none;
+  position: fixed;
+}
+li {
+  width: auto;
+  height: 50px;
+  padding: 0 1em;
+  text-align: center;
+}
+a {
+  width: 100px;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 10px;
+}
+li:hover {
+  background-color: greenyellow;
+}
