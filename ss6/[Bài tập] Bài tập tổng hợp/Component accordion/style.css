@@ -9,6 +9,7 @@
   width: 600px;
   height: 365px;
   border: 1px solid grey;
+  border-radius: 2px;
 }
 h4 {
   margin: 20px 0;
