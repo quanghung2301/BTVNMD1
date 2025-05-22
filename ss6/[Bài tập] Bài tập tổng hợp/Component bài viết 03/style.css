@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 800px;
+  height: 350px;
+  background-color: aliceblue;
+  margin: 20px;
+  padding: 20px;
+}
+.left {
+  width: 20%;
+  height: auto;
+  position: absolute;
+}
+.right {
+  padding-left: 30%;
+
+  display: block;
+}
+li {
+  margin-bottom: 20px;
+}
+h4 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+p {
+  margin-bottom: 20px;
+}
+.bot p {
+  display: inline;
+  padding: 10px;
+}
