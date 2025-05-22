@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  background-color: gainsboro;
+
+  width: 600px;
+  height: 365px;
+  border: 1px solid grey;
+}
+h4 {
+  margin: 20px 0;
+  border-bottom: 1px solid gray;
+  padding: 20px;
+  position: relative;
+}
