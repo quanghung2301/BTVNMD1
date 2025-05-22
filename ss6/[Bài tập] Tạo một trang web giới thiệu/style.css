@@ -34,3 +34,11 @@ p {
   width: 500px;
   height: 1000px;
 }
+.inforlink {
+  color: blue;
+  margin: 0;
+  padding: 0;
+}
+footer {
+  background-color: gray;
+}
