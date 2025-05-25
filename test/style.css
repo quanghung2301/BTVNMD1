@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* css header  */
+.header {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  line-height: 50px;
+  height: 70px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+ul li {
+  list-style: none;
+}
+.img-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+/* Css main */
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  background-color: blueviolet;
+}
+.confirm-container {
+  border: 1px solid black;
+  width: 60%;
+  padding: 5%;
+  background-color: aqua;
+}
+.hotel-container {
+  height: 80%;
+  padding-top: 5%;
+  background-color: red;
+}
+.card-container {
+  border: 1px solid black;
+  width: 60%;
+  background-color: antiquewhite;
+}
+/* csscard */
+.list-card {
+  display: flex;
+}
+.card-li {
+  width: 50px;
+  height: 30px;
+}
+.card {
+  width: 45%;
+  height: 100px;
+  background-color: aqua;
+  border-radius: 5px;
+}
+.card-info {
+  display: flex;
+  justify-content: space-around;
+}
+.card-number {
+  display: flex;
+  background-color: bisque;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.item-leage {
+  width: 100%;
+}
+.Checkin-container {
+  display: flex;
+}
+.booked {
+  display: flex;
+  justify-content: space-between;
+}
+.get-container {
+  width: 75%;
+  display: flex;
+  background-color: blue;
+  padding: 30px 50px;
+  color: aliceblue;
+}
+.get-item {
+  width: 50%;
+}
+.footer-container {
+  display: flex;
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+  justify-content: space-around;
+  background-color: blanchedalmond;
+}
+.footer-item {
+  width: 20%;
+  height: auto;
+  background-color: brown;
+}
+@media screen and (max-width: 1024px) {
+  .confirm-container {
+    width: 100%;
+  }
+  .hotel-container {
+    width: 100%;
+  }
+  .card-container {
+    width: 100%;
+  }
+
+  .footer-item {
+    width: 100%;
+  }
+}
