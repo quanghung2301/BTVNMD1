@@ -1,0 +1,93 @@
+/* rest css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* font */
+
+/* style body */
+/* body {
+  font-family: "Sen", sans-serif;
+} */
+/* css header */
+nav {
+  display: flex;
+}
+nav .menu ul {
+  display: flex;
+
+  border-radius: 1px;
+}
+nav .logo {
+  color: rgba(95, 91, 83, 1);
+  width: 85px;
+  height: 34px;
+  margin-top: 406px;
+  margin-left: 30px;
+  display: flex;
+}
+nav .logo .logo-text {
+  font-family: "Sen", sans-serif;
+  font-family: Sen;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: 0%;
+}
+nav .logo span {
+  font-family: Sen;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: 0%;
+}
+/* nav menu css */
+nav .menu {
+  width: 359;
+  height: 28;
+  margin-top: 403px;
+  margin-left: 400px;
+}
+.menu ul {
+  list-style: none;
+}
+.menu ul li {
+  margin-right: 40px;
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+nav .button {
+  width: 144;
+  height: 49;
+  border-radius: 24.5px;
+  margin-top: 400px;
+  background-color: rgba(23, 17, 0, 1);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 24.5px;
+  padding: 5px 20px;
+}
+nav .button .btn-content {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+main .main-left {
+  width: 570;
+  height: 685;
+  margin-left: 30px;
+  margin-top: 100px;
+}
+main .main-img {
+  width: 470;
+  height: 685;
+
+  border-radius: 20px;
+}
