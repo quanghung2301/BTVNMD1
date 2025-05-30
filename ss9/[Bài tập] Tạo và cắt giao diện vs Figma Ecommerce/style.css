@@ -19,8 +19,8 @@
 /* css header */
 
 .menu-container {
-  width: 1170;
-  height: 50;
+  width: 1170px;
+  height: 50px;
   margin-top: 36px;
   margin-left: 135px;
   display: flex;
@@ -402,4 +402,275 @@ main .main-img {
   letter-spacing: 0%;
   color: rgba(255, 255, 255, 1);
   padding-left: 35px;
+}
+/* css featues */
+.featues-container {
+  width: 1170px;
+  height: 438px;
+
+  display: flex;
+  margin: 0 135px 200px;
+}
+/* css features img */
+.features-img-container {
+  width: 570px;
+  height: 438px;
+  border-radius: 16px;
+
+  display: flex;
+}
+.features-img-container .features-imgleft {
+  margin-top: 34px;
+  margin-right: 30px;
+}
+/* css features text */
+.features-text-container {
+  width: 470px;
+  height: 322px;
+  border-radius: 26px;
+
+  margin: 58px 0 0 130px;
+}
+
+.features-text-container h6 {
+  font-family: "Sen", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: -2%;
+  color: rgba(23, 17, 0, 1);
+}
+.features-text-container p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: rgba(95, 91, 83, 1);
+}
+.features-text-container button {
+  margin-top: 32px;
+  width: 137px;
+  height: 50px;
+  top: 2855px;
+  left: 835px;
+  border-radius: 26px;
+  background-color: rgba(255, 185, 0, 1);
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+}
+/* css CTA */
+.cta-container {
+  width: 1170px;
+  height: 440px;
+  margin: 0 135px 200px;
+  display: flex;
+}
+.cta-text-container {
+  width: 570px;
+  height: 298px;
+  border-radius: 26px;
+  margin: 76px 130px 76px 0;
+}
+.cta-text-container h6 {
+  font-family: "Sen", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: -2%;
+  color: rgba(23, 17, 0, 1);
+}
+.cta-text-container p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: rgba(95, 91, 83, 1);
+}
+.cta-text-container button {
+  margin-top: 32px;
+  width: 137px;
+  height: 50px;
+  top: 2855px;
+  left: 835px;
+  border-radius: 26px;
+  background-color: rgba(255, 185, 0, 1);
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+}
+.cta-img-container {
+  width: 470px;
+  height: 440px;
+  border-radius: 20px;
+}
+/*  css blog */
+.blog-container {
+  width: 1440px;
+  height: 878px;
+  background-color: rgba(255, 252, 244, 1);
+}
+.blog-container .blog-top-container {
+  width: 448px;
+  height: 120px;
+  margin: 96px 496px 55px;
+}
+.blog-container .blog-top-container h6 {
+  font-family: "Sen", sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 48px;
+  letter-spacing: -2%;
+  text-align: center;
+  color: rgba(19, 6, 6, 1);
+}
+.blog-container .blog-top-container p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(105, 98, 98, 1);
+}
+.blog-container .blog-list-container {
+  display: flex;
+  gap: 30px;
+  padding-left: 135px;
+}
+.blog-container .blog-list-container .blog {
+  width: 370px;
+  height: 467px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.05);
+}
+.blog-list-container .blog .blog-img {
+  width: 370px;
+  height: 250px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.blog-list-container .blog .blog-date {
+  display: flex;
+}
+.blog-list-container .blog .blog-date img {
+  margin: 4px 4px 0 0;
+  width: 6px;
+  height: 6px;
+}
+.blog-list-container .blog .blog-text-container {
+  margin: 20px;
+}
+.blog-list-container .blog .blog-text-container .blog-date {
+  width: 133px;
+  height: 26px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(226, 223, 218, 1);
+}
+.blog .blog-text-container .blog-date p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  color: rgba(95, 91, 83, 1);
+}
+.blog .blog-text-container h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: rgba(23, 17, 0, 1);
+  margin: 12px 0;
+}
+.blog .blog-text-container button {
+  width: 118px;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+  background-color: rgba(255, 185, 0, 1);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+}
+.blog-container .dot {
+  width: 30px;
+  height: 6px;
+  margin: 38px 705px;
+}
+/* css footer */
+footer {
+  width: 1440px;
+  height: 428px;
+  background-color: rgba(46, 33, 0, 1);
+  padding-left: 130px;
+}
+.fotter-container {
+  width: 1170px;
+  height: 345px;
+  padding-top: 96px;
+  border-bottom: 1px solid rgba(89, 85, 75, 1);
+}
+.footer-contents-container {
+  width: 267px;
+  height: 163px;
+}
+.footer-contents-container .footer-logo {
+  display: flex;
+}
+.footer-contents-container .footer-logo .logo-text {
+  font-family: "Sen", sans-serif;
+  font-family: Sen;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: 0%;
+  height: 34px;
+  color: rgba(255, 255, 255, 1);
+}
+.footer-contents-container .footer-logo span {
+  font-family: Sen;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: 0%;
+  color: orange;
+}
+.footer-contents-container p {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  margin-bottom: 18px;
+  color: rgba(191, 188, 178, 1);
+}
+.footer-contents-container .footer-sosol img {
+  margin-right: 18px;
+}
+.coppyright {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-top: 28px;
+  color: rgba(128, 125, 116, 1);
 }
