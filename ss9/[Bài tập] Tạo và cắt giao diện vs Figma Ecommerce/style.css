@@ -688,6 +688,9 @@ footer {
   line-height: 28px;
   letter-spacing: 0%;
   color: rgba(255, 255, 255, 1);
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(89, 85, 75, 1);
+  margin-bottom: 28px;
 }
 .footernav-container a {
   font-family: Poppins;
