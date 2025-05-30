@@ -626,6 +626,7 @@ footer {
   height: 345px;
   padding-top: 96px;
   border-bottom: 1px solid rgba(89, 85, 75, 1);
+  display: flex;
 }
 .footer-contents-container {
   width: 267px;
@@ -664,6 +665,7 @@ footer {
 .footer-contents-container .footer-sosol img {
   margin-right: 18px;
 }
+
 .coppyright {
   font-family: Poppins;
   font-weight: 400;
@@ -673,4 +675,43 @@ footer {
   text-align: center;
   margin-top: 28px;
   color: rgba(128, 125, 116, 1);
+}
+.footernav-container {
+  display: flex;
+  gap: 130px;
+  margin-left: 145px;
+}
+.footernav-container h3 {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+}
+.footernav-container a {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  color: rgba(191, 188, 178, 1);
+  text-decoration: none;
+}
+.footernav-container span {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  color: rgba(191, 188, 178, 1);
+}
+
+.footernav-container strong {
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
 }
