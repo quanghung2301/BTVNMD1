@@ -1,167 +1,108 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("form");
-  const tbody = document.getElementById("tbody");
-  const LOCAL_STORAGE_KEY = "tasks";
-  let isEditing = false;
-  let currentEditId = null;
+const courses = [
+  {
+    id: 1,
+    content: "Learn Javascript Session 01",
+    dueDate: "2023-04-17",
+    status: "Pending",
+    assignedTo: "Anh Bách",
+  },
+  {
+    id: 2,
+    content: "Learn Javascript Session 2",
+    dueDate: "2023-04-17",
+    status: "Pending",
+    assignedTo: "Lâm th`",
+  },
+  {
+    id: 3,
+    content: "Learn CSS Session 1",
+    dueDate: "2023-04-17",
+    status: "Pending",
+    assignedTo: "Hiếu Ci ớt ớt",
+  },
+];
 
-  // Khởi tạo dữ liệu mẫu
-  if (!localStorage.getItem(LOCAL_STORAGE_KEY)) {
-    const initialTasks = [
-      {
-        id: 1,
-        content: "Learn Javascript Session 01",
-        dueDate: "2023-04-17",
-        status: "Pending",
-        assignedTo: "Anh Bách",
-      },
-      {
-        id: 2,
-        content: "Learn Javascript Session 2",
-        dueDate: "2023-04-17",
-        status: "Pending",
-        assignedTo: "Lâm",
-      },
-      {
-        id: 3,
-        content: "Learn CSS Session 1",
-        dueDate: "2023-04-17",
-        status: "Pending",
-        assignedTo: "Hiếu Ci ót ót",
-      },
-    ];
-    saveTasksToLocalStorage(initialTasks);
+let tbody = document.getElementById("tbody");
+function showData() {
+  tbody.innerHTML = courses
+    .map(
+      (el, index) => `<tr>
+              <td>${index + 1}</td>
+              <td>${el.content}</td>
+              <td>${el.dueDate}</td>
+              <td>${el.status}</td>
+              <td>${el.assignedTo}</td>
+              <td class="action-buttons">
+                <button class="btn btn-sm btn-secondary" onclick="showEdit(${
+                  el.id
+                })">Sửa</button>
+                <button class="btn btn-sm btn-danger" onclick="handleDelete(${
+                  el.id
+                })">Xóa</button>
+              </td>
+            </tr>`
+    )
+    .join("");
+}
+
+showData();
+
+let form = document.getElementById("form");
+form.onsubmit = function (e) {
+  e.preventDefault();
+  let id = Number(form.courseId.value);
+  console.log(id);
+  const index = courses.findIndex((el) => el.id === id);
+  if (index !== -1) {
+    const newEdit = {
+      id: id,
+      content: form.content.value,
+      dueDate: form.dueDate.value,
+      status: form.status.value,
+      assignedTo: form.assignedTo.value,
+    };
+
+    courses[index] = newEdit;
+    const button = form.querySelector("button");
+    button.innerText = "Submit";
+    form.courseId.value = "";
+  } else {
+    const newCourse = {
+      id: Math.floor(Math.random() * 10000),
+      content: form.content.value,
+      dueDate: form.dueDate.value,
+      status: form.status.value,
+      assignedTo: form.assignedTo.value,
+    };
+    courses.push(newCourse);
   }
 
-  // Hiển thị danh sách công việc
-  function renderTasks() {
-    const tasks = getTasksFromLocalStorage();
-    tbody.innerHTML = "";
+  showData();
+  form.reset();
+};
 
-    tasks.forEach((task) => {
-      const row = document.createElement("tr");
-
-      row.innerHTML = `
-                <td>${task.id}</td>
-                <td>${task.content}</td>
-                <td>${task.dueDate}</td>
-                <td>${task.status}</td>
-                <td>${task.assignedTo}</td>
-                <td>
-                    <button class="btn btn-sm btn-warning edit-btn" data-id="${task.id}">Sửa</button>
-                    <button class="btn btn-sm btn-danger delete-btn" data-id="${task.id}">Xóa</button>
-                </td>
-            `;
-
-      tbody.appendChild(row);
-    });
-
-    // Thêm sự kiện cho các nút
-    document.querySelectorAll(".edit-btn").forEach((btn) => {
-      btn.addEventListener("click", handleEdit);
-    });
-
-    document.querySelectorAll(".delete-btn").forEach((btn) => {
-      btn.addEventListener("click", handleDelete);
-    });
+function handleDelete(id) {
+  let index = courses.findIndex((el) => el.id === id);
+  if (index !== -1) {
+    courses.splice(index, 1);
+  } else {
+    alert("không tồn tại");
   }
+  showData();
+}
 
-  // submit form
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+function showEdit(id) {
+  let edit = courses.find((el) => el.id === id);
+  let button = form.querySelector("button");
+  if (edit) {
+    // fill dữ liệu vào form
+    form.courseId.value = edit.id;
+    form.content.value = edit.content;
+    form.dueDate.value = edit.dueDate;
+    form.status.value = edit.status;
+    form.assignedTo.value = edit.assignedTo;
 
-    const content = form.content.value.trim();
-    const dueDate = form.dueDate.value;
-    const status = form.status.value;
-    const assignedTo = form.assignedTo.value.trim();
-
-    if (!content || !dueDate || status === "Choose status" || !assignedTo) {
-      alert("Vui lòng điền đầy đủ thông tin!");
-      return;
-    }
-
-    const tasks = getTasksFromLocalStorage();
-
-    if (isEditing) {
-      // Cập nhật công việc
-      const index = tasks.findIndex((task) => task.id === currentEditId);
-      if (index !== -1) {
-        tasks[index] = {
-          id: currentEditId,
-          content,
-          dueDate,
-          status,
-          assignedTo,
-        };
-      }
-      resetForm();
-    } else {
-      // Thêm công việc mới
-      const newId =
-        tasks.length > 0 ? Math.max(...tasks.map((task) => task.id)) + 1 : 1;
-      tasks.push({
-        id: newId,
-        content,
-        dueDate,
-        status,
-        assignedTo,
-      });
-    }
-
-    saveTasksToLocalStorage(tasks);
-    renderTasks();
-  });
-
-  // Xử lý sửa công việc
-  function handleEdit(e) {
-    const taskId = parseInt(e.target.dataset.id);
-    const tasks = getTasksFromLocalStorage();
-    const task = tasks.find((task) => task.id === taskId);
-
-    if (task) {
-      form.content.value = task.content;
-      form.dueDate.value = task.dueDate;
-      form.status.value = task.status;
-      form.assignedTo.value = task.assignedTo;
-      form.courseId.value = task.id;
-
-      isEditing = true;
-      currentEditId = taskId;
-      form.querySelector('button[type="submit"]').textContent = "Cập nhật";
-    }
+    // nút -> update
+    button.innerText = "Update";
   }
-
-  // Xử lý xóa công việc
-  function handleDelete(e) {
-    if (confirm("Bạn có chắc muốn xóa công việc này?")) {
-      const taskId = parseInt(e.target.dataset.id);
-      let tasks = getTasksFromLocalStorage();
-
-      tasks = tasks.filter((task) => task.id !== taskId);
-      saveTasksToLocalStorage(tasks);
-      renderTasks();
-    }
-  }
-
-  // Reset form về trạng thái ban đầu
-  function resetForm() {
-    form.reset();
-    form.status.value = "Choose status";
-    form.querySelector('button[type="submit"]').textContent = "Submit";
-    isEditing = false;
-    currentEditId = null;
-  }
-
-  // Lấy danh sách công việc từ Local Storage
-  function getTasksFromLocalStorage() {
-    return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
-  }
-
-  // Lưu danh sách công việc vào Local Storage
-  function saveTasksToLocalStorage(tasks) {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks));
-  }
-
-  // Hiển thị danh sách ban đầu
-  renderTasks();
-});
+}

@@ -4,8 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="container">
+      <h1>Todo App</h1>
+
+      <div class="input-container">
+        <input type="text" id="new-task" placeholder="Add your new todo" />
+        <button id="add-btn">+</button>
+      </div>
+
+      <ul class="task-list" id="task-list">
+        <!-- Todo items will be added here -->
+      </ul>
+
+      <div class="footer">
+        <p class="pending-count">
+          You have <span id="pending-count">0</span> pending tasks
+        </p>
+        <button id="clear-all">Clear All</button>
+      </div>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>

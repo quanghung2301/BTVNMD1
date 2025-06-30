@@ -1,4 +1,4 @@
-// let accounts = JSON.parse(localStorage.getItem("acount")) || [];
+let users = JSON.parse(localStorage.getItem("users")) || [];
 
 let form = document.getElementById("form");
 
@@ -8,11 +8,14 @@ let errorConfirmPassword = document.querySelector(".error-confirm-password");
 
 form.onsubmit = function (e) {
   e.preventDefault();
-
   if (validateData(form)) {
-    registerAccount(form.email.value, form.password.value);
-    alert("đăng ký thành công");
-    document.getElementById("form").reset();
+    const newUser = {
+      id: Math.floor(Math.random() * 10000),
+      email: form.email.value,
+      password: form.password.value,
+    };
+    users.push(newUser);
+    localStorage.setItem("users", JSON.stringify(users));
   }
 };
 
@@ -27,9 +30,6 @@ function validateData(form) {
     // kiểm tra validate email hợp lệ bằng pattern (regex)
     errorEmail.innerText = "Email không hợp lệ";
     check = false;
-  } else if (getRegisteredAccounts(form.email.value)) {
-    //kiểm tra email tồn tại chưa
-    errorEmail.innerText = "Email đã được đăng ký";
   } else {
     errorEmail.innerText = "";
   }
@@ -69,20 +69,4 @@ function validPassword(password) {
   return /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
     password
   );
-}
-function getRegisteredAccounts() {
-  const accounts = localStorage.getItem("registeredAccounts");
-  return accounts ? JSON.parse(accounts) : [];
-}
-function registerAccount(email, password) {
-  const accounts = getRegisteredAccounts();
-  const newUser = {
-    id: Math.floor(Math.random() * 10000),
-    email: form.email.value,
-    password: form.password.value,
-  };
-  accounts.push(newUser);
-  localStorage.setItem("users", JSON.stringify(accounts));
-
-  localStorage.setItem("registeredAccounts", JSON.stringify(accounts));
 }
