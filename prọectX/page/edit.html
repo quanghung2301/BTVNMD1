@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/addedituser.css" />
+  </head>
+  <body>
+    <div id="dashboard" class="show-block">
+      <div class="header">
+        <div class="header-logo">
+          <img src="../assets/images/image (1).png" alt="" class="logo" />
+        </div>
+      </div>
+      <div class="main-container">
+        <div class="sidebar">
+          <div class="sidebar-section">
+            <div class="sidebar-title">Your Dashboard</div>
+            <a
+              href="http://127.0.0.1:5500/dashboard.html"
+              class="sidebar-item active"
+              id="add-user-link"
+              ><img src="../assets/icons/Vector.png" alt="" class="icon" />User
+              dashboard</a
+            >
+            <a
+              href="http://127.0.0.1:5500/page/adduser.html"
+              class="sidebar-item"
+              ><img src="../assets/icons/icon star.png" alt="" class="icon" />
+              Add new user</a
+            >
+            <div class="Separator"></div>
+            <a href="#" class="sidebar-item"
+              ><img src="../assets/icons/icon sign.png" alt="" class="icon" />
+              Sign out</a
+            >
+          </div>
+        </div>
+        <div class="main-content">
+          <div class="screen" id="add-user-screen">
+            <div class="page-header">
+              <div class="page-header-container">
+                <h1 class="page-title">
+                  <img
+                    src="../assets/icons/user manage icon.png"
+                    alt=""
+                    class="user-icon"
+                  />
+                  User Management
+                </h1>
+              </div>
+            </div>
+
+            <div class="form-header">
+              <h2>Edit user</h2>
+            </div>
+
+            <form id="add-user-form">
+              <div class="form-section">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="User code">User code</label>
+                    <input type="text" id="Usercode" name="User code" />
+                    <div class="error" id="User code-error">
+                      Username is required
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" />
+                    <div class="error" id="username-error">
+                      Username is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" />
+                    <div class="error" id="email-error">
+                      Valid email is required
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" />
+                    <div class="error" id="password-error">
+                      Password must be at least 8 characters
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role" name="role">
+                      <option value="ADMIN">ADMIN</option>
+                      <option value="USER">USER</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="birthday">Birthday</label>
+                    <input
+                      type="date"
+                      id="birthday"
+                      name="birthday"
+                      value="1995-01-31"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Status</label>
+                    <div class="radio-group">
+                      <div class="radio-option">
+                        <input
+                          type="radio"
+                          id="status-active"
+                          name="status"
+                          value="Active"
+                          checked
+                        />
+                        <label for="status-active">Active</label>
+                      </div>
+                      <div class="radio-option">
+                        <input
+                          type="radio"
+                          id="status-inactive"
+                          name="status"
+                          value="Inactive"
+                        />
+                        <label for="status-inactive">Inactive</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-footer">
+                <button class="back-btn" id="back-from-add">Back</button>
+                <button class="save-btn" type="submit">Save</button>
+              </div>
+            </form>
+          </div>
+          <div>
+            <div class="pagination">
+              <button>←</button>
+              <button>1</button>
+              <button>2</button>
+              <button class="active">3</button>
+              <button>4</button>
+              <button>5</button>
+              <button>6</button>
+              <button>7</button>
+              <button>...</button>
+              <button>20</button>
+              <button>→</button>
+            </div>
+          </div>
+        </div>
+        <!-- Add User Screen -->
+      </div>
+    </div>
+    <script src="../js/edit.js"></script>
+  </body>
+</html>
